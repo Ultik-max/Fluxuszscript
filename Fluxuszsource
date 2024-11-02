@@ -1,0 +1,306 @@
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>FZ Team - Fluxus Z</title> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"> 
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(8, 2, 11, 0.5);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            color: #00aaff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .navbar-brand a {
+            color: #00aaff;
+        }
+
+        .navbar-brand:hover {
+            color: #dc143c;
+            text-decoration: none;
+        }
+
+        .navbar-nav .nav-link {
+            color: #c5c6c7 !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #146edc !important;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .hero-content h1 {
+            font-size: 6rem;
+            font-weight: bold;
+            display: flex;
+            align-items: baseline;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 178, 255, 0.7);
+        }
+
+        .hero-content .neo {
+            font-size: 7rem;
+            background: linear-gradient(135deg, #00bfff, #008ad4);
+            -webkit-background-clip: text;
+            color: transparent;
+            padding: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+            margin-left: -0.2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1s;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin: 0.5rem 0;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1.5s;
+        }
+
+        .next-gen {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 2s;
+        }
+
+        .join-updates {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 2.5s;
+        }
+
+        .widget-container {
+            width: 100%; 
+            max-width: 350px;
+            height: 500px;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 3s;
+            border: none;
+            border-radius: 15px; 
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .widget-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .widget-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px; 
+        }
+
+        .widget-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .floating-square {
+            position: absolute;
+            border-radius: 5px;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
+        }
+
+        .floating-square.transparent {
+            background-color: rgba(30, 144, 255, 0.5);
+        }
+
+        .floating-square.solid {
+            background-color: rgba(30, 144, 255, 1);
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 4rem; 
+            }
+
+            .hero-content .neo {
+                font-size: 5rem; 
+            }
+
+            .widget-container {
+                height: 400px;
+            }
+
+            .next-gen, .join-updates {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 3rem; 
+            }
+
+            .hero-content .neo {
+                font-size: 4rem; 
+            }
+
+            .widget-container {
+                height: 300px;
+            }
+        }
+    </style> 
+ </head> 
+ <body> 
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top"> 
+   <a class="navbar-brand" href="#">FZ Team</a> 
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+   <div class="collapse navbar-collapse" id="navbarNav"> 
+    <ul class="navbar-nav ml-auto"> 
+     <li class="nav-item"> <a class="nav-link" href="./download.html">Download</a> </li> 
+     <li class="nav-item"> <a class="nav-link" href="./about.html">About Us</a> </li> 
+     <li class="nav-item"> <a class="nav-link" href="./FAQ.html">FAQ</a> </li> 
+     <li class="nav-item"> <a class="nav-link" href="https://discord.gg/ZtugZZeGGs" target="_blank">Discord</a> </li> 
+     <li class="nav-item"> <a class="nav-link" href="https://celestesbypasser.vercel.app/" target="_blank">Add Bot</a> </li> 
+    </ul> 
+   </div> 
+  </nav> 
+  <section class="hero"> 
+   <div class="background"> 
+    <div class="floating-square transparent" style="width: 38.9551px; height: 38.9551px; top: 95.6758vh; left: 6.35358vw; animation-duration: 4.67992s;"></div> 
+    <div class="floating-square transparent" style="width: 38.2713px; height: 38.2713px; top: 85.1933vh; left: 32.6827vw; animation-duration: 2.76837s;"></div> 
+    <div class="floating-square transparent" style="width: 21.3272px; height: 21.3272px; top: 28.3219vh; left: 37.3367vw; animation-duration: 3.57469s;"></div> 
+    <div class="floating-square transparent" style="width: 56.1498px; height: 56.1498px; top: 4.20001vh; left: 34.5293vw; animation-duration: 2.36274s;"></div> 
+    <div class="floating-square transparent" style="width: 59.966px; height: 59.966px; top: 77.5523vh; left: 35.4504vw; animation-duration: 4.13715s;"></div> 
+    <div class="floating-square transparent" style="width: 23.1394px; height: 23.1394px; top: 76.8588vh; left: 4.42344vw; animation-duration: 3.90804s;"></div> 
+    <div class="floating-square transparent" style="width: 52.581px; height: 52.581px; top: 53.2532vh; left: 8.28925vw; animation-duration: 2.07715s;"></div> 
+    <div class="floating-square transparent" style="width: 42.6896px; height: 42.6896px; top: 60.0306vh; left: 41.0915vw; animation-duration: 2.42388s;"></div> 
+    <div class="floating-square solid" style="width: 36.9266px; height: 36.9266px; top: 72.3641vh; left: 15.9312vw; animation-duration: 2.10772s;"></div> 
+    <div class="floating-square solid" style="width: 55.5273px; height: 55.5273px; top: 18.9989vh; left: 52.6223vw; animation-duration: 2.18116s;"></div> 
+    <div class="floating-square solid" style="width: 20.6746px; height: 20.6746px; top: 99.6512vh; left: 12.6502vw; animation-duration: 3.04485s;"></div> 
+    <div class="floating-square transparent" style="width: 40.1997px; height: 40.1997px; top: 67.3731vh; left: 37.4309vw; animation-duration: 2.17991s;"></div> 
+    <div class="floating-square transparent" style="width: 26.9921px; height: 26.9921px; top: 98.1167vh; left: 89.4941vw; animation-duration: 3.55167s;"></div> 
+    <div class="floating-square transparent" style="width: 41.262px; height: 41.262px; top: 45.7998vh; left: 76.5253vw; animation-duration: 4.61579s;"></div> 
+    <div class="floating-square transparent" style="width: 40.1049px; height: 40.1049px; top: 69.4546vh; left: 86.0803vw; animation-duration: 2.81886s;"></div> 
+    <div class="floating-square solid" style="width: 36.3744px; height: 36.3744px; top: 28.3827vh; left: 26.7653vw; animation-duration: 2.56094s;"></div>
+    <div class="floating-square solid" style="width: 38.7892px; height: 38.7892px; top: 34.4026vh; left: 51.906vw; animation-duration: 4.69955s;"></div>
+    <div class="floating-square solid" style="width: 46.1467px; height: 46.1467px; top: 33.265vh; left: 65.6699vw; animation-duration: 3.00478s;"></div>
+    <div class="floating-square solid" style="width: 46.0371px; height: 46.0371px; top: 91.6705vh; left: 91.1105vw; animation-duration: 3.99821s;"></div>
+    <div class="floating-square solid" style="width: 31.6786px; height: 31.6786px; top: 76.2549vh; left: 91.7218vw; animation-duration: 3.86078s;"></div>
+    <div class="floating-square solid" style="width: 33.4437px; height: 33.4437px; top: 24.4244vh; left: 28.0264vw; animation-duration: 4.64585s;"></div>
+    <div class="floating-square transparent" style="width: 52.8061px; height: 52.8061px; top: 41.1017vh; left: 38.9403vw; animation-duration: 2.95182s;"></div>
+    <div class="floating-square transparent" style="width: 23.3673px; height: 23.3673px; top: 99.4659vh; left: 97.7142vw; animation-duration: 4.76691s;"></div>
+    <div class="floating-square solid" style="width: 42.605px; height: 42.605px; top: 9.66963vh; left: 24.423vw; animation-duration: 2.0264s;"></div>
+    <div class="floating-square solid" style="width: 21.9166px; height: 21.9166px; top: 82.7282vh; left: 14.3927vw; animation-duration: 3.78493s;"></div>
+    <div class="floating-square solid" style="width: 21.8392px; height: 21.8392px; top: 74.1625vh; left: 42.147vw; animation-duration: 2.75007s;"></div>
+    <div class="floating-square transparent" style="width: 51.5413px; height: 51.5413px; top: 68.8767vh; left: 63.101vw; animation-duration: 4.26547s;"></div>
+    <div class="floating-square transparent" style="width: 39.2098px; height: 39.2098px; top: 14.0845vh; left: 22.2186vw; animation-duration: 2.31749s;"></div>
+    <div class="floating-square solid" style="width: 35.6765px; height: 35.6765px; top: 94.3863vh; left: 92.2278vw; animation-duration: 2.43772s;"></div>
+    <div class="floating-square transparent" style="width: 59.253px; height: 59.253px; top: 18.6712vh; left: 38.2889vw; animation-duration: 2.09378s;"></div>
+   </div> 
+   <div class="hero-content"> 
+    <h1>Fluxus <span class="neo">Z</span></h1> 
+    <div class="next-gen">
+      Next Rizz exploit 
+    </div> 
+   </div> 
+   <div class="widget-container"> 
+    <iframe src="https://discord.com/widget?id=1283644308012007506&amp;theme=dark" width="100%" height="100%" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe> 
+   </div> 
+  </section> 
+  <script>
+        function createFloatingSquares(num) {
+            const background = document.querySelector(".background");
+
+            for (let i = 0; i < num; i++) {
+                const square = document.createElement("div");
+                square.className = "floating-square";
+
+                const isTransparent = Math.random() > 0.5;
+                square.classList.add(isTransparent ? "transparent" : "solid");
+
+                const size = Math.random() * 40 + 20;
+                square.style.width = `${size}px`;
+                square.style.height = `${size}px`;
+                square.style.top = `${Math.random() * 100}vh`;
+                square.style.left = `${Math.random() * 100}vw`;
+                square.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+                background.appendChild(square);
+            }
+        }
+
+        createFloatingSquares(15);
+    </script> 
+ </body>
+</html>
